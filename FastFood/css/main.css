@@ -1,0 +1,65 @@
+.redme {
+    border: 1px solid red;
+}
+
+.burgers, .fillings, .options, .basket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin: 20px;   
+}
+
+.filling, .burger {
+    cursor: pointer;
+}
+
+.burger img {
+    max-width: 200px;
+}
+
+.fillings img {
+    max-width: 100px;
+}
+
+.options {
+    padding-top: 30px;
+}
+
+.mayones, .pepper {
+    position: relative;
+    padding: 20px;
+}
+
+.addon {
+    display: none;
+}
+
+.checked {
+    display: inline-block;
+}
+
+.plus {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    top: 5px;
+    right: -5px;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options img {
+    max-width: 100px;
+}
