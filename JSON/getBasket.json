@@ -1,0 +1,20 @@
+{
+  "amount": 68,
+  "countGoods": 3,
+  "contents":[
+    {
+        "id": 1,
+        "title": "Happyness",
+        "price": 10,
+        "picture": "https://picsum.photos/200/300?random=1",
+	"quantity": 1
+
+    },
+    {
+        "id": 3,
+        "title": "Green Forest",
+        "price": 29,
+        "picture": "https://picsum.photos/200/300?random=3",
+	"quantity": 2
+    },
+]}
