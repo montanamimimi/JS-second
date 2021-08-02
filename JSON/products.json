@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Happyness",
+        "price": 10,
+        "picture": "https://picsum.photos/200/300?random=1"
+    },
+    {
+        "id": 2,
+        "title": "Clear sly",
+        "price": 350,
+        "picture": "https://picsum.photos/200/300?random=2"
+    },
+    {
+        "id": 3,
+        "title": "Green Forest",
+        "price": 29,
+        "picture": "https://picsum.photos/200/300?random=3"
+    },
+    {
+        "id": 4,
+        "title": "white water",
+        "price": 113,
+        "picture": "https://picsum.photos/200/300?random=4"
+    },
+    {
+        "id": 5,
+        "price": 50
+    }
+]
