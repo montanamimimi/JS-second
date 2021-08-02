@@ -1,5 +1,30 @@
 'use strict';
 
+const API = "https://raw.githubusercontent.com/montanamimimi/JS-second/main/JSON/";
+
+
+// Для 1 части ДЗ - тренировка на промисах. 
+
+let getRequest = (url) => {
+    return new Promise((res, rej) => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                if (xhr.status !== 200) {
+                    rej("Error!");
+                }
+                else {
+                    res(xhr.responseText);
+                }
+            }
+        }
+        xhr.send();
+    })
+}
+
+
+// Класс для одного товара 
 
 class ProductItem {
     constructor(id, title = "No name", price, picture = 'https://picsum.photos/200/300') {
@@ -19,6 +44,8 @@ class ProductItem {
     }
 }
 
+// Класс для списка товаров 
+
 class ProductList {
     constructor(container = '.products') {
         this.container = container;
@@ -26,17 +53,24 @@ class ProductList {
         this.allProducts = [];
 
         this._fetchGoods();
-        this._render();
+
     }
 
+    // Получение списка товаров на промисах 
+
     _fetchGoods() {
-        this._goods = [
-            {id: 1, title: "Happyness", price: 10, picture: "https://picsum.photos/200/300?random=1"},
-            {id: 2, title: "Clear sly", price: 350, picture: "https://picsum.photos/200/300?random=2"},
-            {id: 3, title: "Green Forest", price: 29, picture: "https://picsum.photos/200/300?random=3"},
-            {id: 4, title: "white water", price: 113, picture: "https://picsum.photos/200/300?random=4"},
-            {id: 5, price: 50}
-        ];
+        getRequest(`${API}products.json`)
+            .then((data) => {
+                return JSON.parse(data);
+            })
+            .then((data) => {
+                this._goods = data;
+                this._render();
+            })
+            .catch((text) => {
+                console.log(`The errror is ${text}`);
+            });
+         
     }
 
     _render() {
@@ -50,7 +84,7 @@ class ProductList {
     }
 
 
-    // Для вида, чтобы убедиться, что работает. Так этот метод должен работать в корзине а не тут. 
+    // Это больше не работает
     getTotalPrice() {
         let summ = 0;
         for (const product of this.allProducts) {
@@ -60,9 +94,7 @@ class ProductList {
     }
 }
 
-let newList = new ProductList();
-
-newList.getTotalPrice();
+// Класс для товара в корзине 
 
 class ProductInBasket extends ProductItem {
     constructor(id, title, price, picture, quantity = 0) {
@@ -80,25 +112,91 @@ class ProductInBasket extends ProductItem {
 
  }
 
+// Класс для корзины 
+
 class Basket {
     constructor() {
-        productsInBasket = [];
+        this.productsInBasket = [];
     }
 
     showBasket() {}
 
     closeBasket(){}
 
-    addProduct() {}
+    // Без реального функционала, не успеваю, слооооожно =))) 
 
-    removeProduct() {}
+    addProduct(prod) {
+        fetch(`${API}addToBasket.json`)
+        .then(response => response.json())
+        .then((data) => {
+            if (data.result == 1) {
+                console.log(`Product ${prod} add`);
+            }
+            else {
+                console.log("Something wrong");
+            }
+        })
+        .catch(() => {
+            console.log("Error");
+        });
+    }
+
+    removeProduct(prod) {
+        fetch(`${API}deleteFromBasket.json`)
+        .then(response => response.json())
+        .then((data) => {
+            if (data.result == 1) {
+                console.log(`Product ${prod} removed`);
+            }
+            else {
+                console.log("Something wrong");
+            }
+        })
+        .catch(() => {
+            console.log("Error");
+        });
+    }
+
+    // С асинхроном это тоже больше не будет работать 
+
+    // getTotalPrice() {
+    //     let summ = 0;
+    //     for (const product of this.productsInBasket) {
+    //         summ += product.price*product.quantity;
+    //     }
+    //     return summ;
+    // }
+
+    // Данные в файле надо будет переделать, ну и функционала тут тоже пока нет. Только запросы. 
 
     getTotalPrice() {
-        let summ = 0;
-        for (const product of this.productsInBasket) {
-            summ += product.price*product.quantity;
-        }
-        return summ;
+        fetch(`${API}getBasket.json`)
+            .then(response => response.json())
+            .then((data) => {
+                console.log(data.amount);
+            })
+            .catch(() => {
+                console.log("Error");
+            });
+    }
+
+    getBasketList() {
+        fetch(`${API}getBasket.json`)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data.contents);
+        })
+        .catch(() => {
+            console.log("Error");
+        });
     }
 }
 
+
+let newList = new ProductList();
+let newBasket = new Basket();
+
+newBasket.getTotalPrice();
+newBasket.addProduct(2);
+newBasket.removeProduct(3);
+newBasket.getBasketList();
