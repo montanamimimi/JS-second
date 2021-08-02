@@ -1,21 +1,18 @@
 {
-  "amount": 68,
-  "countGoods": 3,
-  "contents":[
+  "amount": 46600,
+  "countGoods": 2,
+  "contents": [
     {
-        "id": 1,
-        "title": "Happyness",
-        "price": 10,
-        "picture": "https://picsum.photos/200/300?random=1",
-	"quantity": 1
-
+      "id_product": 123,
+      "product_name": "Ноутбук",
+      "price": 45600,
+      "quantity": 1
     },
     {
-        "id": 3,
-        "title": "Green Forest",
-        "price": 29,
-        "picture": "https://picsum.photos/200/300?random=3",
-	"quantity": 2
+      "id_product": 456,
+      "product_name": "Мышка",
+      "price": 1000,
+      "quantity": 1
     }
   ]
 }
