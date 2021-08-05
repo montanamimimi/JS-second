@@ -200,3 +200,5 @@ newBasket.getTotalPrice();
 newBasket.addProduct(2);
 newBasket.removeProduct(3);
 newBasket.getBasketList();
+
+
