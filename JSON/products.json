@@ -22,9 +22,5 @@
         "title": "white water",
         "price": 113,
         "picture": "https://via.placeholder.com/150/342100"
-    },
-    {
-        "id": 5,
-        "price": 50
     }
 ]
