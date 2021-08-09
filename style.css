@@ -26,8 +26,8 @@ header {
 }
 
 .btn-buy {
-    background-color: rgb(246, 255, 124);
-    color: rgb(73, 73, 73);
+    background-color: rgb(92, 92, 92);
+    color: white;
     text-decoration: none;
 }
 
@@ -48,6 +48,6 @@ header {
 }
 
 .product-image {
-    width: 200px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
 }

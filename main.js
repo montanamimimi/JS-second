@@ -27,7 +27,7 @@ let getRequest = (url) => {
 // Класс для одного товара 
 
 class ProductItem {
-    constructor(id, title = "No name", price, picture = 'https://picsum.photos/200/300') {
+    constructor(id, title = "No name", price, picture = 'https://via.placeholder.com/150/444444') {
         this.id = id;
         this.title = title;
         this.price = price;
