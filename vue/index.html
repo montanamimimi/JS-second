@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a class="header-link" href="index.html">Главная</a>
+            <div class="search">         
+                <input type="text" class="text" v-model="search">
+                <button @click="filterGoods()">Find</button>
+            </div>
+            <a class="header-link basket-link" href="#">Корзина</a>
+        </header>
+
+        <h4 class="search-header" v-if="applySearch">Поиск товаров "{{ search }}"</h4>
+
+        <div class="products" id="products">
+            <div class="product" v-for="product of products" :key="product.id" v-if="product.show == 1">                
+                <img class="product-image" :src="product.picture" :alt="product.title">
+                <h2 class="product-title">{{ product.title }}</h2>
+                <p>Price: ${{ product.price }} </p>
+                <a href="#" class="btn btn-buy" :id="product.id" @click="addToCart(product)">Add to cart</a>
+            </div>
+        </div>
+
+        <div class="basket">
+            <h2 v-if="countBasket == 0">В корзине пока пусто</h2>
+            <h2 v-else>Ваша корзина:</h2>
+
+            <div class="basket-products">
+                <div class="basket-product" v-for="item of inBasket" :key="item.id" v-if="item.quantity > 0">
+                    <img class="basket-image" :src="item.picture" :alt="item.title">
+                    <h2 class="basket-title">{{ item.title }}</h2>
+                    <p>Price: ${{ item.price }} </p>
+                    <p>Quantity: {{ item.quantity }} </p>
+                    <a href="#" class="btn btn-remove" :id="item.id" @click="remove(item)">Remove from cart</a>
+                </div>
+            </div>
+
+            <p v-if="countBasket > 0">Сумма заказа: ${{ countBasket }}</p>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
