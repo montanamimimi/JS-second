@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Happyness",
+        "price": 10,
+        "picture": "https://via.placeholder.com/150/123456"
+    },
+    {
+        "id": 2,
+        "title": "Clear sly",
+        "price": 350,
+        "picture": "https://via.placeholder.com/150/120033"
+    },
+    {
+        "id": 3,
+        "title": "Green Forest",
+        "price": 29,
+        "picture": "https://via.placeholder.com/150/001245"
+    },
+    {
+        "id": 4,
+        "title": "white water",
+        "price": 113,
+        "picture": "https://via.placeholder.com/150/342100"
+    }
+]
