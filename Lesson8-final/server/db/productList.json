@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "title": "Cool Jacket",
+        "price": 12,
+        "picture": "images/product_13.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Cool coat",
+        "price": 22,
+        "picture": "images/product_14.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Just a Hoody",
+        "price": 29,
+        "picture": "images/product_03.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Grey  T-shirt",
+        "price": 18,
+        "picture": "images/product_15.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Blue hoody",
+        "price": 27,
+        "picture": "images/product_08.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Red T-shirt",
+        "price": 38,
+        "picture": "images/product_16.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Hot Cap",
+        "price": 36,
+        "picture": "images/product_06.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Bald man",
+        "price": 61,
+        "picture": "images/product_17.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Mango People",
+        "price": 57,
+        "picture": "images/product_18.jpg"
+    }
+]

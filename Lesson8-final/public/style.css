@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(126, 126, 126);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.btn-buy {
+    background-color: rgb(92, 92, 92);
+    color: white;
+    text-decoration: none;
+}
+
+.products {
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.product {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.product-title {
+    text-transform: uppercase;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+}
+
+.basket-item {
+    position: relative;
+}
+
+.basket {
+    width: 300px;
+    padding: 10px;
+    color: grey;
+    background-color: #fff;
+    position: absolute;
+    top: 30px;
+    box-shadow: 0px 0px 15px #666;
+}
+
+.basket-products {
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-image {
+    width: 50px;
+    height: 50px;
+}
+
+.basket-product {
+    padding: 10px;
+    display: flex;
+}
+
+.basket-desc, .basket-button {
+    padding-left: 10px;
+}
+
+.basket-title {
+    font-size: 13px;    
+}
+
+.btn-remove {
+    background-color: rgb(163, 163, 163);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.search {
+    display: flex;
+}
+
+.search-header {
+    padding: 50px;
+}
